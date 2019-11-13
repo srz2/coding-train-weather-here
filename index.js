@@ -13,8 +13,9 @@ app.use(favicon('./favicon.ico'));
 app.use(express.static('public'));
 app.use(express.json({ limit: "1mb" }));
 
-app.listen(3000, () => {
-    console.log('WeatherHere listening on port 3000');
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log('WeatherHere listening on port ' + port);
 });
 
 app.get('/status/has-dark-sky-api-key', (req, res) => {
