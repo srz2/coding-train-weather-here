@@ -17,6 +17,14 @@ app.listen(3000, () => {
     console.log('WeatherHere listening on port 3000');
 });
 
+app.get('/status/has-dark-sky-api-key', (req, res) => {
+    var boo_exists = true;
+    if (DARK_SKY_API_KEY === undefined || DARK_SKY_API_KEY === null) {
+        boo_exists = false;
+    }
+    res.json({exists: boo_exists});
+});
+
 app.get('/weather/:latlon', async (req, res) => {    
     const latlon = req.params.latlon.split(',');
     const lat = latlon[0];

@@ -2,3 +2,7 @@ p {
     background-color: rgba(247, 26, 247, 0.55);
     margin: 0;
 }
+
+#apikey-container {
+    background-color: rgb(230, 99, 99);
+}

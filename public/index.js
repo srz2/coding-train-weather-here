@@ -1,3 +1,11 @@
+fetch('/status/has-dark-sky-api-key').then(res => { return res.json(); }).then(res => {
+    console.log('API: ');
+    console.log(res);
+    if (!res.exists) {
+        document.getElementById('apikey').textContent = "API Key for DarkSky is missing";
+    }
+});
+
 if ('geolocation' in navigator) {
     console.log('Geolocation available');
 
