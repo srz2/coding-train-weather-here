@@ -2,7 +2,6 @@ const express = require('express');
 const favicon = require('serve-favicon');
 const Datastore = require('nedb');
 const fetch = require('node-fetch');
-const config = require('./config');
 
 const app = express();
 const database = new Datastore('database.db');
